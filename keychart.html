@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+    
+<head>
+    <meta charset="utf-8">
+    <title>keychart</title>
+
+</head>
+<body>
+
+    <div class="alignfull">
+        <!-- ライブラリ読み込み -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/0.7.0/chartjs-plugin-datalabels.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+        <style>
+        /*スタイル設定*/
+        .wide{
+            margin: 0 auto;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        table.mytable{
+            text-align:center;
+        }
+        th.grayheader{
+            background-color: gray;
+            color: white;
+            font-weight: bold;
+        }
+        td.b_td{
+            font-weight: bold;
+        }
+        #per1, #per2, #per3{
+            background-color: white;
+        }
+        td.blue_td{
+            color: deepskyblue;
+            font-weight: bold;
+        }
+        span.redspan{
+            color: salmon;
+        }
+        </style>
+
+        <!-- 表を書く -->
+        <table class="b_less mytable">
+            <tbody>
+                <tr>
+                    <th class="grayheader" colspan="6">・<span class="redspan">御社の</span>【KEY指標】　KEYとなる重要指標の動向を分析します</th>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>今月</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="b_td">【予算】</td>
+                    <td class="b_td">【実績】</td>
+                    <td class="b_td">【差異】</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="blue_td">2. 売上高人件費比率</td>
+                    <td></td>
+                    <td><div id="per1">0.0</div></td>
+                    <td><div id="per2">0.0</div></td>
+                    <td><div id="per3">0.0</div></td>
+                    <td>%</td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <canvas id="myLineChart" height="100px"></canvas>
+                        <input type="file" id="inp1">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+    <script>
+        //グラフ用コード
+        var sc = document.createElement('script');
+        sc.src = 'https://hamada2029.shop/js/keychart.js?' + new Date().getTime();
+        document.body.appendChild(sc);
+    </script>
+
+
+</body>
+    
+</html>
